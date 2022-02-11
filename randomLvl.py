@@ -1,5 +1,5 @@
 import numpy as np
-from PIL import Image, ImageColor
+from PIL import Image, ImageColor, ImageDraw
 from numpy import random
 
 
@@ -54,7 +54,8 @@ row = 0
 column = 0
 
 imgName = "TestTileMap.png"
-img = Image.new('RGB', (HEIGHT,WIDTH)) # create the Image of size Height*Width pixel 
+img = Image.new('RGB', (HEIGHT,WIDTH))# create the Image of size Height*Width pixel 
+draw = ImageDraw.Draw(img)
 for i in range(WIDTH):
     column = i
     index = random.randint(100)
@@ -117,4 +118,9 @@ for i in range(WIDTH):
         img.putpixel((row,column),(r,g,b))
     row - 1
     img.putpixel((column,row),(r,g,b))
+    x0 = random.randint(32)
+    y0 = random.randint(32)
+    x1 = random.randint(32)
+    y1 = random.randint(32)
+    draw.ellipse([(x0,y0),(x1,y1)], fill = "red", outline = "#6d6d6d")
 img.save(imgName) 
