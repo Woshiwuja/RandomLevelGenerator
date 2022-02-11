@@ -116,11 +116,11 @@ for i in range(WIDTH):
             g = tileRock[1]
             b = tileRock[2]
         img.putpixel((row,column),(r,g,b))
-    row - 1
+        row - 10  
     img.putpixel((column,row),(r,g,b))
-    x0 = random.randint(32)
-    y0 = random.randint(32)
-    x1 = random.randint(32)
-    y1 = random.randint(32)
-    draw.ellipse([(x0,y0),(x1,y1)], fill = "red", outline = "#6d6d6d")
+#   x0 = random.randint(32)   LITTLE TOWN IN THE UPPERLEFT CORNER
+#    y0 = random.randint(32)
+#    x1 = random.randint(32)
+#    y1 = random.randint(32)
+#    draw.ellipse([(x0,y0),(x1,y1)], fill = "red", outline = "#6d6d6d")
 img.save(imgName) 
